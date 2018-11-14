@@ -15,7 +15,7 @@
     --tag-list '{{ gitlab_runner_tags | join(",") }}'
     --executor '{{ gitlab_runner_executor }}'
     --limit '{{ gitlab_runner_concurrent_specific }}'
-    --locked='{{gitlab_runner_locked}}'
+    --run-untagged
     {% for env_var in gitlab_runner_env_vars %}
     --env '{{ env_var }}'
     {% endfor %}
